@@ -1,4 +1,5 @@
 radio.set_group(250)
+radio.set_group(111)
 RunComp.set_light_level()
 
 cas = 0
