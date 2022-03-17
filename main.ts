@@ -12,7 +12,7 @@ radio.onReceivedNumber(function on_received_number(zacatek: number) {
 RunComp.OnLightDrop(function on_light_drop() {
     radio.sendNumber(stop)
     pause(start)
-    music.playTone(Note.A, 1000)
+    music.playTone(Note.A, 200)
 })
 radio.onReceivedNumber(function on_received_number2(reset: number) {
     control.reset()

@@ -15,7 +15,7 @@ radio.on_received_number(on_received_number)
 def on_light_drop():
     radio.send_number(stop)
     pause(start)
-    music.play_tone(Note.A, 1000)
+    music.play_tone(Note.A, 200)
 RunComp.on_light_drop(on_light_drop)
 
 def on_received_number2(reset):
