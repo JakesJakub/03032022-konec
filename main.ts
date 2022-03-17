@@ -1,15 +1,20 @@
-radio.setGroup(250)
+radio.setTransmitPower(3)
 radio.setGroup(111)
 RunComp.SetLightLevel()
-let cas = 0
-let cas1 = 0
-let cas2 = 0
-RunComp.OnLightDrop(function on_light_drop() {
-    let cas2 = control.millis()
-    music.playTone(Note.A, 1000)
-    console.log(cas)
-})
-radio.onReceivedNumber(function on_received_number(number: number) {
+let reset = 0
+let zacatek = 1
+let stop = 2
+let start = 0
+radio.onReceivedNumber(function on_received_number(zacatek: number) {
     
-    cas1 = control.millis()
+    start = control.millis()
 })
+RunComp.OnLightDrop(function on_light_drop() {
+    radio.sendNumber(stop)
+    pause(start)
+    music.playTone(Note.A, 1000)
+})
+radio.onReceivedNumber(function on_received_number2(reset: number) {
+    control.reset()
+})
+basic.showNumber(start)
